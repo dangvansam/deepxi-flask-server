@@ -1,0 +1,8 @@
+workon tf2-gpu
+python flask_server.py
+
+test file trực tiếp trên server thì sử dụng file infer.py
+
+md = get_model_new() #khởi tạo model
+#khử nhiễu file
+md('Input-21-12-18-original (1) 21.45.13.wav') #file ouput cùng thư mục file input
