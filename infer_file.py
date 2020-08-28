@@ -9,10 +9,13 @@ import tensorflow as tf
 import dev.utils as utils
 import argparse
 
+<<<<<<< HEAD
 import matplotlib
 matplotlib.use('tkagg')
 import matplotlib.pyplot as plt
 
+=======
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
 from dev.utils import read_wav
 from tqdm import tqdm
 import dev.gain as gain
@@ -141,6 +144,7 @@ def get_model():
 
     def infer(filename):
         print('Start infer file: {}'.format(filename))
+<<<<<<< HEAD
         file_name, file_extension = os.path.splitext(filename)
         if file_extension !=".wav":
             #convert here 
@@ -162,6 +166,12 @@ def get_model():
         # plt.show()
         # plt.close()
         wav = np.asarray(np.multiply(wav, 32768.0), dtype=np.int16)
+=======
+        #(wav, _) = read_wav(args.in_filepath) # read wav from given file path.
+        (wav, _) = librosa.load(filename, 16000, mono=True) # read wav from given file path.
+        wav = np.asarray(np.multiply(wav, 32768.0), dtype=np.int16)
+
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
         print(max(wav), min(wav), np.mean(wav))
         print(wav.shape)
 
@@ -178,10 +188,14 @@ def get_model():
                                                 net.x_PHA_ph: input_feat[2], net.nframes_ph: input_feat[1], net.training_ph: False})) # output of network.
         if np.isnan(y).any(): ValueError('NaN values found in enhanced speech.')
         if np.isinf(y).any(): ValueError('Inf values found in enhanced speech.')
+<<<<<<< HEAD
         # plt.plot(y)
         # plt.show()
         # plt.savefig('aaa2.png')
         #y = y/np.max(np.abs(y))
+=======
+
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
         y = np.asarray(np.multiply(y, 32768.0), dtype=np.int16)
         out_filepath = filename.replace('.'+filename.split('.')[-1], '_pred.wav')
         wav_write(out_filepath, args.f_s, y)
@@ -192,7 +206,11 @@ def get_model():
 if __name__ == '__main__':
 
     infer = get_model()
+<<<<<<< HEAD
     infer('21-12-18 GIAO BAN QUY IV GM1032 (KL).mp3')
+=======
+    infer('Toàn cảnh phòng chống dịch COVID-19 ngày 18-4-2020 - VTV24.mp3')
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
     #infer('set/test_noisy_speech/198853.wav')
 
     

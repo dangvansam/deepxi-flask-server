@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
 
 export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
@@ -203,3 +204,15 @@ Please cite the following depending on what you are using:
 [1] [A. Nicolson, K. K. Paliwal, Deep learning for minimum mean-square error approaches to speech enhancement, Speech Communication 111 (2019) 44 - 55, https://doi.org/10.1016/j.specom.2019.06.002.](https://doi.org/10.1016/j.specom.2019.06.002)
 
 [2] [Q. Zhang, A. M. Nicolson, M. Wang, K. Paliwal and C. Wang, "DeepMMSE: A Deep Learning Approach to MMSE-based Noise Power Spectral Density Estimation," in IEEE/ACM Transactions on Audio, Speech, and Language Processing.](https://ieeexplore.ieee.org/document/9066933)
+=======
+# deepxi-flask-server
+**DeepXi with Flask Server - Denoise Audio**  
+  
+**run flask server:**  
+```
+python flask_server.py  
+```
++ open `https://localhost:8080` in browser
+  
+![upload file to Flask server and get response](demo.PNG)
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9

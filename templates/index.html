@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<<<<<<< HEAD
     <title>Công nghệ khử nhiễu dựa trên học sâu LSTM phục vụ VP UBND Hà Nội new_ver</title>
+=======
+    <title>deep-xi</title>
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
 </head>
 <style>
     body{
         text-align: center;
+<<<<<<< HEAD
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+=======
+        
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
     }
     .custom_btn{
         background-color: lightgreen;
@@ -20,24 +28,39 @@
         
     }
     .container{
+<<<<<<< HEAD
         padding-left: 10px;
         padding-right: 10px;
 		width: 100%;
     }
 	.row{        
 		width: 100%;
+=======
+        padding-left: 20%;
+        padding-right: 20%;
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
     }
 </style>
 <body>
     <div class="container">
         <div class="row">
             <div class="col">
+<<<<<<< HEAD
             <div class="mb-3 mt-5">
             <h2 class="mb-5" style="font-weight: normal">Công nghệ khử nhiễu dựa trên học sâu LSTM <br> Phục vụ VP UBND Hà Nội v2</h2>
               <div class="form-group mb-3">
                   <div class="custom-file">
                       <input type="file" class="custom-file-input" name="file_input" id="file_input" oninput="input_filename();">
                       <label id="file_input_label" class="custom-file-label" >Chọn file (wav, mp3, flac)</label>
+=======
+            <div class="mb-3 mt-3">
+            <h2 class="mb-3" style="font-weight: 300">DeepXi</h2>
+            
+              <div class="form-group mb-3">
+                  <div class="custom-file">
+                      <input type="file" class="custom-file-input" name="file_input" id="file_input" oninput="input_filename();">
+                      <label id="file_input_label" class="custom-file-label" >Select file (wav, mp3, flac)</label>
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
                     </div>
                 </div>
                 <div id="progress_wrapper" class="d-none">
@@ -47,6 +70,7 @@
                     </div>
                 </div>
                 <div id="alert_wrapper" class="d-none"></div>
+<<<<<<< HEAD
                 <button onclick="upload('/upload');" id="upload_btn" class="btn btn-primary">Tải lên</button>
                 <button class="btn btn-primary d-none" id="loading_btn" type="button" disabled>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Đang tải lên...
@@ -64,6 +88,25 @@
                 <h5>Tải về dữ liệu đã khử nhiễu:<span><br><a id="predict_dl" href="" style="font-weight: normal;"></a></span></h5>
                 <audio id="predict_audio" controls autoplay src="" type="audio/*">
             </div>
+=======
+                <button onclick="upload('/upload');" id="upload_btn" class="btn btn-primary">Upload</button>
+                <button class="btn btn-primary d-none" id="loading_btn" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Uploading...
+            </button>
+              <button type="button" id="cancel_btn" class="btn btn-secondary d-none">Cancel</button>
+            </div>
+
+            <div id="original_play" style="margin: 10px;" class="d-none">
+                <h4>original</h4>
+                <audio id="original_audio" controls src="" type="audio/*">
+            </div>
+            <div id="predict_play" style="margin: 10px;" class="d-none">
+                <h4>predict</h4>
+                <audio id="predict_audio" controls src="" type="audio/*">
+            </div>
+
+        </div>
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
         </div>
       </div>
 
@@ -80,6 +123,7 @@
         var alert_wrapper = document.getElementById("alert_wrapper");
         var original_play = document.getElementById("original_play")
         var predict_play = document.getElementById("predict_play")
+<<<<<<< HEAD
 
         var original_audio = document.getElementById("original_audio")
         var predict_audio = document.getElementById("predict_audio")
@@ -87,6 +131,10 @@
         var original_dl = document.getElementById("original_dl")
         var predict_dl = document.getElementById("predict_dl")
         //console.log(original_dl)
+=======
+        var original_audio = document.getElementById("original_audio")
+        var predict_audio = document.getElementById("predict_audio")
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
         function input_filename() {
                 file_input_label.innerText = input.files[0].name;}
 
@@ -106,7 +154,11 @@
             }
 
         function upload(url) {
+<<<<<<< HEAD
             //console.log(url)
+=======
+            console.log(url)
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
             if (!input.value) {
                 show_alert("No file selected", "warning")
                 return;
@@ -133,6 +185,7 @@
                 var percent_complete = (loaded / total) * 100;
                 progress.setAttribute("style", `width: ${Math.floor(percent_complete)}%`);
                 progress_status.innerHTML = `${Math.floor(percent_complete)}% uploaded`;
+<<<<<<< HEAD
                 //console.log(percent_complete)
                 if (percent_complete == 100){
                     progress_wrapper.classList.add("d-none")
@@ -141,6 +194,11 @@
                     // progress_status.innerHTML = "100% uploaded";
                     // show_alert("Saving file to server...", "primary");
                     loading_btn.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>" + " Đang khử nhiễu..."
+=======
+                if (percent_complete == 100){
+                    show_alert("Saving file to server...", "primary");
+                    loading_btn.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>" + " Predict..."
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
                 }
             })
             // request load handler (transfer complete)
@@ -149,6 +207,7 @@
                     show_alert(`${request.response.message}`, "success", true);
                     original_play.classList.remove("d-none")
                     original_audio.src = request.response.file_path
+<<<<<<< HEAD
                     
                     original_dl.href = request.response.file_path
                     original_dl.innerText = request.response.file_path.replace('static/upload/','')
@@ -168,12 +227,29 @@
                         predict_dl.href = json.out_file_path
                         predict_dl.innerText = json.out_file_path.replace('static/upload/','')
 
+=======
+                    original_audio.autoplay = true
+                    progress_wrapper.classList.add("d-none")
+                    //loading_btn.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>" + " Predict..."
+                    predict_rq = predict('/predict/' + String(request.response.file_path).split('/').join('='))
+                    if (predict_rq.status == 200){
+                        json = JSON.parse(predict_rq.responseText)
+                        show_alert(json.message, "success")
+                        console.log(predict_rq.responseText)
+                        console.log(json.out_file_path)
+                        predict_play.classList.remove("d-none")
+                        predict_audio.src = json.out_file_path
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
                     }
                     else{
                         show_alert(`Error predict file:` + filename, "danger");
                     }
                     loading_btn.classList.add("d-none")
+<<<<<<< HEAD
                     loading_btn.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>" + " Tải lên"
+=======
+                    loading_btn.innerHTML = "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>" + " Uploading..."
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
                     
                 }
                 else {
@@ -199,9 +275,13 @@
         }
 
         function predict(url){
+<<<<<<< HEAD
             console.log('in predict')
             var xmlHttp = new XMLHttpRequest();
             cancel_btn.classList.remove("d-none");
+=======
+            var xmlHttp = new XMLHttpRequest();
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
             //xmlHttp.responseType = "json";
             xmlHttp.open( "GET", url, false ); // false for synchronous request
             xmlHttp.send( null );
@@ -226,7 +306,11 @@
                 // Reset the progress bar state
                 progress.setAttribute("style", `width: 0%`);
                 // Reset the input placeholder
+<<<<<<< HEAD
                 file_input_label.innerText = "Chọn file (wav, mp3, flac)";
+=======
+                file_input_label.innerText = "Select file";
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
                 
             }
 

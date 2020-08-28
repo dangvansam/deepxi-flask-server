@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Statistics are stored here, as well as the training lists and the validation set.
+=======
+Statistics are stored here, as well as the training lists.
+>>>>>>> 8562128801c20609f75775b37774ad133c45dda9
