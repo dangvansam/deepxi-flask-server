@@ -1,5 +1,5 @@
-# deepxi-flask-server
-**DeepXi (Audio Denoise with Deep Neural Network) | Flask Frontend Demo**  
+# Speech Denoising With Deep Neural Network
+**DeepXi (Speech Denoising With Deep Neural Network) | Flask Frontend Demo**  
 + **Run flask server:**  
 ```
 python flask_server.py  
